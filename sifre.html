@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitapstudio – yeni şifre</title>
+<style>
+  :root { --bg:#f3eee6; --card:#fffdf9; --ink:#2b2621; --muted:#7a7167; --accent:#8e2f2f; --line:#ddd4c6; }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--bg); color:var(--ink); font:15px/1.5 "Segoe UI", system-ui, sans-serif; padding:16px; }
+  .card { width:min(420px,100%); background:var(--card); border:1px solid var(--line); border-radius:14px; padding:24px; box-shadow:0 10px 30px rgba(40,25,10,.12); }
+  h1 { margin:0 0 6px; font-size:20px; } .mark { color:var(--accent); font-weight:700; }
+  p { color:var(--muted); margin:0 0 16px; }
+  input { width:100%; height:42px; margin:0 0 10px; padding:0 12px; border:1px solid var(--line); border-radius:8px; font:inherit; background:#fff; }
+  button { width:100%; height:42px; border:0; border-radius:8px; background:var(--accent); color:#fff; font:inherit; font-weight:600; cursor:pointer; }
+  .ok { color:#2e7d32; } .err { color:#b42318; }
+</style>
+</head>
+<body>
+<main class="card">
+  <h1><span class="mark">Kitapstudio</span> · yeni şifre</h1>
+  <p id="msg">Bağlantı denetleniyor…</p>
+  <form id="form" hidden>
+    <input id="p1" type="password" placeholder="Yeni şifre (en az 6 karakter)" autocomplete="new-password" required minlength="6">
+    <input id="p2" type="password" placeholder="Yeni şifre (tekrar)" autocomplete="new-password" required minlength="6">
+    <button type="submit">Şifreyi kaydet</button>
+  </form>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+<script>
+  const msg = document.getElementById("msg");
+  const form = document.getElementById("form");
+  const client = supabase.createClient("https://nlrcxqhwogdqtmnrradj.supabase.co", "sb_publishable_4HUxCCPSsVykkXjb3fKu-g_L18GcN2u", { auth: { detectSessionInUrl: true, persistSession: false } });
+  const hash = new URLSearchParams(location.hash.slice(1));
+  const query = new URLSearchParams(location.search);
+  const error = hash.get("error_description") || query.get("error_description");
+  const show = (text, cls = "") => { msg.textContent = text; msg.className = cls; };
+  if (error) show("Bu bağlantı geçersiz ya da süresi dolmuş. Kitapstudio'da \"Şifremi unuttum\"a yeniden basın.", "err");
+  else if ((hash.get("type") || query.get("type")) === "signup") show("Hesabınız onaylandı. Kitapstudio'ya dönüp giriş yapabilirsiniz.", "ok");
+  client.auth.onAuthStateChange((event) => {
+    if (event === "PASSWORD_RECOVERY" || (event === "SIGNED_IN" && (hash.get("type") === "recovery" || query.get("type") === "recovery"))) {
+      show("Yeni şifrenizi iki kez yazın.");
+      form.hidden = false;
+    }
+  });
+  setTimeout(() => { if (form.hidden && !error && msg.className === "") show("Bu sayfa, Kitapstudio'daki \"Şifremi unuttum\" e-postasındaki bağlantıyla açılır."); }, 4000);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const a = document.getElementById("p1").value, b = document.getElementById("p2").value;
+    if (a.length < 6) return show("Şifre en az 6 karakter olmalı.", "err");
+    if (a !== b) return show("İki şifre aynı değil.", "err");
+    const { error } = await client.auth.updateUser({ password: a });
+    if (error) return show("Kaydedilemedi: " + error.message, "err");
+    form.hidden = true;
+    show("Şifreniz değişti. Kitapstudio'ya dönüp yeni şifrenizle giriş yapabilirsiniz.", "ok");
+  });
+</script>
+</body>
+</html>
