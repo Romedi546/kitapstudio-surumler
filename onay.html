@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitapstudio – E-posta onayı</title>
+<style>
+  :root { --bg: #f6f1e7; --card: #fffdf8; --text: #2b2420; --muted: #6f655c; --accent: #8c2a2a; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1d1a17; --card: #27231f; --text: #eee6da; --muted: #b3a89a; --accent: #d9827a; } }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, sans-serif; padding: 16px; box-sizing: border-box; }
+  .card { background: var(--card); max-width: 460px; padding: 32px 28px; border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,.08); text-align: center; }
+  h1 { font-size: 22px; margin: 0 0 12px; color: var(--accent); }
+  p { margin: 8px 0; color: var(--muted); }
+  .ok { font-size: 44px; }
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="ok">✓</div>
+  <h1>E-postanız onaylandı</h1>
+  <p>Kitapstudio hesabınız hazır. Uygulamaya dönün: açık bıraktıysanız giriş kendiliğinden yapılır, değilse e-posta ve şifrenizle <b>Giriş yap</b>'a basın.</p>
+  <p>Yeni kullanıcı olarak ilk 14 gün ücretsizdir.</p>
+</div>
+<script>
+  // Supabase puts an error into the address when the link is old or already used.
+  var q = new URLSearchParams(location.hash.slice(1) + "&" + location.search.slice(1));
+  if (q.get("error")) {
+    document.querySelector("#card").innerHTML =
+      '<h1>Bağlantı geçersiz</h1><p>Bu onay bağlantısının süresi dolmuş ya da daha önce kullanılmış. Uygulamada <b>Giriş yap</b>\'a basın; hesabınız onaylanmadıysa oradaki <b>Onay e-postasını tekrar gönder</b> ile yeni bağlantı isteyin.</p>';
+  }
+</script>
+</body>
+</html>

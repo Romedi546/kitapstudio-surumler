@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitapstudio – Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; --fg: #1f1b17; --bg: #faf7f2; --muted: #6b6259; --accent: #8b1a1a; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #eee6dc; --bg: #1c1916; --muted: #a89f95; --accent: #d98c8c; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { color: var(--accent); font-size: 1.7rem; margin-bottom: 4px; }
+  h2 { font-size: 1.15rem; margin-top: 28px; }
+  .date, .langs { color: var(--muted); }
+  .langs a { color: var(--accent); }
+  li { margin: 4px 0; }
+</style>
+</head>
+<body>
+<main>
+<p class="langs"><a href="gizlilik.html" hreflang="tr">Türkçe</a> · English · <a href="gizlilik-ar.html" hreflang="ar">العربية</a></p>
+<h1>Kitapstudio – Privacy Policy</h1>
+<p class="date">Last updated: 22 October 2026 · Version 0.41</p>
+
+<p>Kitapstudio is a writing program for Arabic and Turkish books, commentaries (sharh), glosses (hashiya) and critical editions (tahqiq), for Windows, Mac, Android and the browser. This page explains which information the app uses, why, and what your rights are. Data controller: Kitapstudio (M.R.C.).</p>
+
+<h2>1. Without an account</h2>
+<p>Your books are stored only on your own device and are not sent anywhere. Dictation and the free text recognition (OCR) run on your device; sound and images do not leave it.</p>
+
+<h2>2. What the server keeps when you create an account</h2>
+<ul>
+  <li><strong>Account:</strong> your e-mail address, your name (if you entered one), an irreversible hash of your password. If you turned on two-step sign-in, the record of your authenticator app.</li>
+  <li><strong>License and devices:</strong> license type and end date; for each device linked to the account, a random identifier made by the app, its kind (Windows, Android…) and when it was last seen.</li>
+  <li><strong>Sync:</strong> the content of your books, so that they stay the same on your devices. Only you can see your books; other users have no access.</li>
+  <li><strong>Trial period:</strong> an irreversible hash of your e-mail address, so that the trial is given only once per e-mail (this hash stays even if you delete your account; the address itself does not).</li>
+  <li><strong>Purchases:</strong> the plan you chose, the price, the reference code given to you (KS-…) and when you sent the "I have paid" notice. Payment is made by bank transfer; <strong>card details are never asked for or kept, in the app or on the server.</strong></li>
+  <li><strong>OCR credit:</strong> the pack you requested and your remaining page credit; the time, kind and cost of your advanced readings (not the page image or the text read).</li>
+  <li><strong>OCR permission:</strong> your answer to the question in section 4 and its date; if you agreed, the page data described there.</li>
+  <li><strong>Feedback:</strong> the note you send, the quoted text (if any), book title, page, app version and platform.</li>
+  <li><strong>Error reports:</strong> if the app hits an unexpected error, the technical error text, where in the code it happened, the app version and platform (also without an account). No book content is sent; Arabic words and long quotations are removed from the report. Reports are deleted after 90 days.</li>
+</ul>
+
+<h2>3. What this information is used for</h2>
+<ul>
+  <li>Sign-in, license and device limit, and syncing books between devices.</li>
+  <li>Matching your payment and turning on your license: when you report a payment, your name, e-mail, plan and reference code are sent to the administrator as a message (Telegram).</li>
+  <li>Reading your feedback and fixing the app.</li>
+</ul>
+<p>There are no ads; your data is not sold, not used for marketing and not shared with others. The app has no usage tracking (analytics).</p>
+
+<h2>4. Improving the Kitapstudio reader (optional, with your explicit consent)</h2>
+<p>The first time you use advanced reading we ask once: <em>"May the images of pages you read and the text you correct be used to improve Kitapstudio's own reader?"</em> Nothing is collected unless you say "Yes". If you say "Yes", the following is kept only for <strong>pages you read with advanced reading</strong>:</p>
+<ul>
+  <li>a reduced copy of the page image (JPEG),</li>
+  <li>the text the readers (AI) read from that page,</li>
+  <li>if you corrected the text and added it to your book or witness, the corrected text.</li>
+</ul>
+<p><strong>Purpose:</strong> to train and test a reading model that will read handwritten and printed Arabic pages on Kitapstudio's own server; it is used for no other purpose, not sold and not shared with anyone. Your name, e-mail or the rest of your books are not added to this data; the records are kept with your account id only so that you can use your right to deletion. The data sits in a private store; only Kitapstudio's reading service can write to it, and only the administrator accesses it, for training. Nothing identifying you comes out of the pages used in training; if a page contains personal information (a name, address, seal, etc.) you can turn the permission off while reading that page.</p>
+<p><strong>Legal basis:</strong> your explicit consent (KVKK art. 5/1, GDPR art. 6/1-a). <strong>Retention:</strong> as long as your consent lasts or model development continues; at most 5 years. <strong>Withdrawal:</strong> in My account → OCR credit you can turn the permission off at any time (nothing is collected after that) and delete what was sent so far with <strong>"Delete the pages I sent"</strong>; deleting your account deletes all of it too. Single pages cannot be taken out of a model trained before the deletion; your data is not used in later trainings.</p>
+
+<h2>5. Service providers</h2>
+<ul>
+  <li><strong>Supabase:</strong> account, license and sync server (data travels over an encrypted connection).</li>
+  <li><strong>Telegram:</strong> only for notifying the administrator of payment and OCR requests.</li>
+  <li><strong>GitHub:</strong> the page update files are downloaded from (only version information is read).</li>
+  <li><strong>Advanced (paid) OCR:</strong> the page image you choose to read is sent, only to be read, to Anthropic (Claude) and, for hard script, also to Google (Gemini) (a transfer abroad; these services do not use the images sent to train their own models). Your account information is not sent to these services.</li>
+</ul>
+
+<h2>6. Your rights and deleting your account</h2>
+<p>In the app, <strong>My account → Delete my account</strong> deletes your account, license, device records, OCR records and the copies of your books on the server; the books on your device stay. For requests to access, correct or delete your data under the Turkish data protection law (KVKK, No. 6698) and the GDPR, write to us.</p>
+
+<h2>7. Children</h2>
+<p>Kitapstudio is for academic work; it is not directed at children under 13 and does not knowingly collect information from them.</p>
+
+<h2>8. Contact</h2>
+<p>E-mail: <a href="mailto:rumedimuhammed@gmail.com">rumedimuhammed@gmail.com</a></p>
+<p class="date">This is a translation of the Turkish policy; if they differ, the Turkish text prevails.</p>
+</main>
+</body>
+</html>

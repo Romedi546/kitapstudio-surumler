@@ -18,7 +18,7 @@
 <body>
 <main>
 <h1>Kitapstudio – Gizlilik Politikası</h1>
-<p class="date">Son güncelleme: 18 Ekim 2026 · Sürüm 0.38</p>
+<p class="date">Son güncelleme: 22 Ekim 2026 · Sürüm 0.41</p>
 
 <p>Kitapstudio; Arapça ve Türkçe kitap, şerh, haşiye ve tahkik çalışmaları için bir yazı programıdır (Windows, Mac, Android ve tarayıcı). Bu sayfa, uygulamanın hangi bilgileri neden kullandığını ve sizin haklarınızı açıklar. Veri sorumlusu: Kitapstudio (M.R.C.).</p>
 
@@ -32,8 +32,10 @@
   <li><strong>Eşitleme:</strong> cihazlarınız arasında aynı kalsınlar diye kitaplarınızın içeriği. Kitaplarınızı yalnız siz görebilirsiniz; başka kullanıcılar erişemez.</li>
   <li><strong>Deneme süresi:</strong> deneme süresinin bir e-postaya bir kez verilmesi için e-posta adresinizin geri çözülemez özeti (hesabınızı silseniz de bu özet kalır; adresin kendisi değil).</li>
   <li><strong>Satın alma:</strong> seçtiğiniz plan, fiyat, size verilen referans kodu (KS-…) ve "Ödemeyi yaptım" bildiriminin zamanı. Ödeme banka havalesiyle yapılır; <strong>kart bilgisi uygulamada ya da sunucuda hiçbir zaman istenmez ve tutulmaz.</strong></li>
-  <li><strong>OCR kredisi:</strong> talep ettiğiniz paket ve kalan sayfa krediniz.</li>
+  <li><strong>OCR kredisi:</strong> talep ettiğiniz paket ve kalan sayfa krediniz; gelişmiş okumalarınızın zamanı, türü ve maliyeti (sayfa resmi ve okunan metin değil).</li>
+  <li><strong>OCR izni:</strong> aşağıdaki 4. maddedeki soruya verdiğiniz cevap ve tarihi; izin verdiyseniz o maddede yazan sayfa verileri.</li>
   <li><strong>Geri bildirim:</strong> gönderdiğiniz not, (varsa) alıntı, kitap adı, sayfa, uygulama sürümü ve platform.</li>
+  <li><strong>Hata raporu:</strong> uygulama beklenmedik bir hata verirse hatanın teknik metni, kodda nerede olduğu, uygulama sürümü ve platform (hesap açmadan da). Kitap içeriği gönderilmez; Arapça kelimeler ve uzun alıntılar rapordan çıkarılır. Raporlar 90 gün sonra silinir.</li>
 </ul>
 
 <h2>3. Bu bilgiler ne için kullanılır</h2>
@@ -44,25 +46,35 @@
 </ul>
 <p>Reklam yoktur; verileriniz satılmaz, pazarlama için kullanılmaz ve başkalarıyla paylaşılmaz. Uygulamada kullanım takibi (analytics) yoktur.</p>
 
-<h2>4. Hizmet sağlayıcılar</h2>
+<h2>4. Kitapstudio okuyucusunu geliştirmek (isteğe bağlı, açık rızanızla)</h2>
+<p>Gelişmiş okumayı ilk kullandığınızda bir kez sorarız: <em>"Okuttuğunuz sayfaların resmi ve düzelttiğiniz metin, Kitapstudio'nun kendi okuyucusunu geliştirmek için kullanılsın mı?"</em> Siz "Evet" demedikçe hiçbir şey toplanmaz. "Evet" derseniz, yalnız <strong>gelişmiş okumada okuttuğunuz sayfalar</strong> için şunlar saklanır:</p>
+<ul>
+  <li>sayfa resminin küçültülmüş bir kopyası (JPEG),</li>
+  <li>okuyucuların (yapay zekâ) o sayfadan okuduğu metin,</li>
+  <li>metni düzeltip kitabınıza ya da nüshanıza eklediyseniz, düzelttiğiniz metin.</li>
+</ul>
+<p><strong>Amaç:</strong> Kitapstudio'nun yazma ve matbu Arapça sayfaları kendi sunucusunda okuyacak bir okuma modelini eğitmek ve sınamak; başka bir amaçla kullanılmaz, satılmaz, kimseyle paylaşılmaz. Ad, e-posta ya da kitaplarınızın geri kalanı bu verilere eklenmez; kayıtlar yalnız silme hakkınızı kullanabilmeniz için hesabınızın kimliğiyle saklanır. Veriler herkese kapalı bir depoda durur; yalnız Kitapstudio'nun okuma servisi yazabilir, yalnız eğitim için yönetici erişir. Eğitimde kullanılan sayfalardan sizi tanıtan bir bilgi çıkmaz; sayfada kişisel bir bilgi (ad, adres, mühür vb.) bulunuyorsa o sayfayı okuturken izni kapatabilirsiniz.</p>
+<p><strong>Hukuki dayanak:</strong> açık rızanız (KVKK m. 5/1, GDPR m. 6/1-a). <strong>Saklama süresi:</strong> izniniz sürdükçe ya da model geliştirme sürdükçe; en çok 5 yıl. <strong>Geri alma:</strong> Hesabım → OCR kredisi'nden izni istediğiniz an kapatabilirsiniz (bundan sonra hiçbir şey toplanmaz) ve <strong>"Gönderdiğim sayfaları sil"</strong> ile o ana kadar gönderilenleri silebilirsiniz; hesabınızı silince de hepsi silinir. Silinmeden önce eğitilmiş bir modelin içinden tek tek sayfalar çıkarılamaz; sonraki eğitimlerde verileriniz kullanılmaz.</p>
+
+<h2>5. Hizmet sağlayıcılar</h2>
 <ul>
   <li><strong>Supabase:</strong> hesap, lisans ve eşitleme sunucusu (veriler şifreli bağlantıyla aktarılır).</li>
   <li><strong>Telegram:</strong> yalnız ödeme ve OCR taleplerinin yöneticiye bildirilmesi.</li>
   <li><strong>GitHub:</strong> güncelleme dosyalarının indirildiği sayfa (yalnız sürüm bilgisi alınır).</li>
-  <li><strong>Gelişmiş (ücretli) OCR</strong> kullanıma açıldığında, okutmak için seçtiğiniz sayfa resmi yalnız okuma amacıyla seçilen metin okuma hizmetine gönderilecek; bu sayfa o zaman güncellenecektir.</li>
+  <li><strong>Gelişmiş (ücretli) OCR:</strong> okutmak için seçtiğiniz sayfa resmi, yalnız okunması için Anthropic (Claude) ve zor yazıda ayrıca Google (Gemini) hizmetine gönderilir (yurt dışı aktarım; bu hizmetler gönderilen resmi kendi modellerini eğitmek için kullanmaz). Hesap bilgileriniz bu hizmetlere gönderilmez.</li>
 </ul>
 
-<h2>5. Haklarınız ve hesabın silinmesi</h2>
+<h2>6. Haklarınız ve hesabın silinmesi</h2>
 <p>Uygulamada <strong>Hesabım → Hesabımı sil</strong> ile hesabınız, lisansınız, cihaz kayıtlarınız, OCR kayıtlarınız ve sunucudaki kitap kopyalarınız silinir; cihazınızdaki kitaplar yerinde kalır. 6698 sayılı KVKK ve GDPR kapsamındaki bilgi alma, düzeltme ve silme talepleriniz için bize yazabilirsiniz.</p>
 
-<h2>6. Çocuklar</h2>
+<h2>7. Çocuklar</h2>
 <p>Kitapstudio akademik çalışma içindir; 13 yaşından küçüklere yönelik değildir ve bilerek onlardan bilgi toplamaz.</p>
 
-<h2>7. İletişim</h2>
+<h2>8. İletişim</h2>
 <p>E-posta: <a href="mailto:rumedimuhammed@gmail.com">rumedimuhammed@gmail.com</a></p>
 
 <hr>
-<p class="en"><strong>English summary.</strong> Without an account, your books stay on your device; dictation and the free OCR run on your device. With an account we store your e-mail, optional name, licence, device ids and your books (for syncing, visible only to you), plan and payment reference for bank-transfer purchases (no card data is ever collected), OCR credits and the feedback you send. Payment notices (name, e-mail, plan, reference) are sent to the administrator via Telegram. No ads, no tracking, no selling or sharing of data. Providers: Supabase (server), Telegram (admin notices), GitHub (update files). You can delete your account and server data in the app (Account → Delete my account). Contact: rumedimuhammed@gmail.com</p>
+<p class="en"><strong>English summary.</strong> Without an account, your books stay on your device; dictation and the free OCR run on your device. With an account we store your e-mail, optional name, licence, device ids and your books (for syncing, visible only to you), plan and payment reference for bank-transfer purchases (no card data is ever collected), OCR credits and the feedback you send. Advanced (paid) OCR sends the page picture you choose to Anthropic (Claude) and, for hard script, Google (Gemini) only to read it. Only if you answer "yes" to a one-time question (off until then; Account → OCR credit to change it), a smaller copy of the pages you read with advanced OCR, the text read and the text you corrected are kept in a private store to train Kitapstudio's own reader; "Delete the pages I sent" removes them. Payment notices (name, e-mail, plan, reference) are sent to the administrator via Telegram. No ads, no tracking, no selling or sharing of data. Providers: Supabase (server), Telegram (admin notices), GitHub (update files). You can delete your account and server data in the app (Account → Delete my account). Contact: rumedimuhammed@gmail.com</p>
 </main>
 </body>
 </html>
